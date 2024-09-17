@@ -32,21 +32,24 @@ html {
 }
 
 header {
+  box-shadow: #bfbfbf 0px 0px 5px 1px;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  padding: 15px 2vw;
+  gap: 2vw;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 3vw;
-  background-color: white;
-  box-shadow: #bfbfbf 0px 0px 5px 1px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  gap: 2vw;
 }
 main {
-  margin-top: 40px;
-  padding: 0 3vw;
+  margin-top: 2vw;
+  padding: 0 2vw;
 }
 
 .logo {
@@ -60,12 +63,12 @@ main {
   margin-left: 10px;
 }
 
-header nav {
+.header-container nav {
   display: flex;
   align-items: center;
 }
 
-header nav a {
+.header-container nav a {
   padding: 8px 16px;
   font-size: 18px;
   color: black;
@@ -73,24 +76,24 @@ header nav a {
   /* border-radius: 5px; */
 }
 
-header nav a:hover {
+.header-container nav a:hover {
   background-color: #dadada;
 }
 
-header .search_bar {
+.header-container .search_bar {
   width: 100%;
   border: 1px solid #bfbfbf;
   border-radius: 6px;
 }
-header .search_bar:focus-within {
+.header-container .search_bar:focus-within {
   border: 1px solid #333;
 }
 
-header .search_bar form {
+.header-container .search_bar form {
   display: flex;
 }
 
-header .search_bar form button {
+.header-container .search_bar form button {
   padding: 0 16px;
   font-size: 18px;
   color: black;
@@ -99,15 +102,15 @@ header .search_bar form button {
   border-radius: 0px 6px 6px 0px;
   background-color: white;
 }
-header .search_bar form button i {
+.header-container .search_bar form button i {
   color: #707070;
   transition: color 0.2s ease-in-out;
 }
-header .search_bar form button i:hover {
+.header-container .search_bar form button i:hover {
   color: #333;
 }
 
-header .search_bar input {
+.header-container .search_bar input {
   width: 100%;
   padding: 7px 16px;
   padding-left: 16px;
@@ -117,37 +120,37 @@ header .search_bar input {
   font-size: 18px;
 }
 
-header .user-account {
+.header-container .user-account {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-header .user-account a {
+.header-container .user-account a {
   white-space: nowrap;
   font-size: 18px;
   color: black;
 }
 
-header .user-account .sign-up {
+.header-container .user-account .sign-up {
   background-color: var(--btn-color);
   color: white;
   border-radius: 6px;
 }
 
-header .user-account .Login {
+.header-container .user-account .Login {
   padding: 7px 16px;
   cursor: pointer;
   border-radius: 6px;
   border: 1px solid #bfbfbf;
   transition: 0.2s ease-in-out;
 }
-header .user-account .Login:hover {
+.header-container .user-account .Login:hover {
   background-color: #fafeff;
   border: 1px solid var(--btn-color);
 }
 
-header .user-account .fa-globe {
+.header-container .user-account .fa-globe {
   color: black;
   background-color: var(--btn-color);
   padding: 6px;
@@ -358,7 +361,6 @@ main .swiper-container {
   height: auto;
   aspect-ratio: 4/1;
   object-fit: cover;
-
 }
 .swiper .swiper-pagination-bullet-active {
   background-color: white;
@@ -602,7 +604,7 @@ main .category .category-scroller .active:hover {
 /* footer */
 footer {
   margin-top: 30px;
-  padding: 20px 3vw;
+  padding: 20px 2vw;
   /* background-color: #33ae1b; */
   background-color: #202020;
 }
@@ -784,12 +786,20 @@ footer .copy-terms .term-condition a {
   font-size: 18px;
 }
 
+
+
 /* @media Query  css*/
+@media (min-width: 1650px) {
+  .container {
+    width: 1600px;
+    margin: auto;
+  }
+}
 @media (max-width: 1200px) {
-  header .user-account {
+  .header-container .user-account {
     /* display: none; */
   }
-  header nav {
+  .header-container nav {
     display: none;
   }
 }
