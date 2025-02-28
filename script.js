@@ -1,3 +1,16 @@
+// for navbar menu active
+document.addEventListener('DOMContentLoaded', function () {
+    const navbarlinks = document.querySelectorAll('nav a');
+
+    navbarlinks.forEach(link => {
+        link.addEventListener('click', function (event) {
+            event.preventDefault();
+            document.querySelector('nav a.active').classList.remove('active');
+            this.classList.add('active')
+        });
+    });
+});
+
 // for pagination
 document.addEventListener('DOMContentLoaded', function () {
     const paginationLinks = document.querySelectorAll('.pagination a[data-page]');
@@ -50,19 +63,15 @@ function updateButtonVisibility() {
     scrollLeftButton.classList.toggle('hidden', scroller.scrollLeft === 0);
     scrollRightButton.classList.toggle('hidden', scroller.scrollLeft >= maxScrollLeft);
 }
-
 scrollRightButton.addEventListener('click', function () {
     scroller.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     updateButtonVisibility();
 });
-
 scrollLeftButton.addEventListener('click', function () {
     scroller.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
     updateButtonVisibility();
 });
-
 scroller.addEventListener('scroll', updateButtonVisibility);
-
 // Initial button visibility check
 updateButtonVisibility();
 
@@ -74,7 +83,7 @@ const cardsList = document.querySelectorAll(".card-list .card")
 // define the fitercards functions
 
 const categoryCards = e => {
-    document.querySelector(".active").classList.remove("active");
+    document.querySelector(".category button.active").classList.remove("active");
     e.target.classList.add("active")
 
     // iterate over each category cards
@@ -92,29 +101,6 @@ categoryButtons.forEach(button => button.addEventListener("click", categoryCards
 
 
 
-// JavaScript code to handle the click event
-// document.addEventListener('DOMContentLoaded', function () {
-//     var creatorLink = document.getElementById('creator-link');
-
-//     if (creatorLink) {
-//         creatorLink.addEventListener('click', function (event) {
-//             event.preventDefault(); // Prevent the default action if inside a link
-//             window.location.href = 'https://creatorchannel.com'; // Replace with the actual URL
-//         });
-//     }
-// });
-
-
-
-
-
-
-// Show Login form popup
-document.getElementById('login-btn').addEventListener('click', function () {
-    document.getElementById('popup-container').style.display = 'flex';
-    document.getElementById('login-form').style.display = 'block';
-    document.getElementById('signup-form').style.display = 'none';
-});
 
 // Show Signup form popup
 document.getElementById('signup-btn').addEventListener('click', function () {
@@ -134,7 +120,6 @@ window.addEventListener('click', function (event) {
         document.getElementById('popup-container').style.display = 'none';
     }
 });
-
 
 // for form password
 const forms = document.querySelector(".loginformcontainer"),
